@@ -7,8 +7,13 @@ plugins {
 
 android {
     namespace = "com.example.handwritten_digit_scanner"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
+
+    aaptOptions {
+        noCompress.add("tflite")
+        noCompress.add("lite")
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
